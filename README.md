@@ -50,5 +50,6 @@ class MyYmlGenerator extends YmlGenerator {
   }
 }
 
-Description of add* methods you can find in YmlGenerator.php
+Description of add* methods you can find in YmlGenerator.php.
+
 More about YML see: http://help.yandex.ru/partnermarket/yml/about-yml.xml
