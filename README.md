@@ -15,7 +15,6 @@ For example:
 
 Your config/main.php:
 
-    
     'import'=>array(
         ...
         'ext.YmlGenerator.YmlGenerator',
@@ -27,6 +26,7 @@ Your config/main.php:
         ...
         'ymlGenerator'=>array(
             'class'=>'MyYmlGenerator',
+            // create file in DOCUMENT_ROOT directory
             'outputFile'=>dirname($_SERVER['SCRIPT_FILENAME']).'/catalogue.yml'
         ),
         ...
