@@ -12,9 +12,12 @@ For generating xml data you need to create your own generator class and implemen
   - offers() 
  
 For example:
-class MyYmlGenerator extends YmlGenerator {
 
-  protected function shopInfo() {
+
+    class MyYmlGenerator extends YmlGenerator {
+
+
+    protected function shopInfo() {
       return array(
           'name'=>'',
           'company'=>'',
@@ -24,31 +27,32 @@ class MyYmlGenerator extends YmlGenerator {
           'agency'=>'',
           'email'=>''
       );
-  }
-  
-  
-  protected function currencies() {
-    $currencies = ...;
-    foreach($currencies as $currecy) {
-      $this->addCurrency($id,$rate);
     }
-  }
   
+
+    protected function currencies() {
   
-  protected function categories() {
-    $categories = ...;
-    foreach($categories as $category) {
-      $this->addCategory($name,$id,$parentId);
-    }    
-  }
-  
-  protected function offers() {
-    $offers = ...;
-    foreach($offers as $offer) {
-      $this->addOffer($id,$data, $params, $available, $type, $bid, $cbid);
+      $currencies = ...;
+      foreach($currencies as $currecy) {
+        $this->addCurrency($id,$rate);
+      }
     }
-  }
-}
+
+    protected function categories() {
+      $categories = ...;
+      foreach($categories as $category) {
+        $this->addCategory($name,$id,$parentId);
+      }    
+    }
+
+      protected function offers() {
+        $offers = ...;
+        foreach($offers as $offer) {
+          $this->addOffer($id,$data, $params, $available, $type, $bid, $cbid);
+        }
+      }
+    
+    }
 
 Description of add* methods you can find in YmlGenerator.php.
 
