@@ -74,6 +74,12 @@ Your component file:
     
     }
 
+Run generator:
+
+     $generator = Yii::app()->ymlGenerator;
+     $generator->run();
+
+
 Description of add* methods you can find in YmlGenerator.php.
 
 More about YML see: http://help.yandex.ru/partnermarket/yml/about-yml.xml
