@@ -13,6 +13,26 @@ For generating xml data you need to create your own generator class and implemen
  
 For example:
 
+Your config/main.php:
+
+    
+    'import'=>array(
+        ...
+        'ext.YmlGenerator.YmlGenerator',
+        ...
+    ),
+
+    // application components
+    'components'=>array(
+        ...
+        'ymlGenerator'=>array(
+            'class'=>'MyYmlGenerator',
+            'outputFile'=>dirname($_SERVER['SCRIPT_FILENAME']).'/catalogue.yml'
+        ),
+        ...
+    )
+
+Your component file:
 
     class MyYmlGenerator extends YmlGenerator {
 
