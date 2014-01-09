@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Генератор xml-файла для Яндекс.Маркета
+ * Sample Yandex.Market Yml generator
  */
 
 class MyYmlGenerator extends YmlGenerator {

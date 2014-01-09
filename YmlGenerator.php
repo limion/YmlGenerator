@@ -32,7 +32,7 @@
  * How to implement these methods see descriptions below in this class
  */
 
-class YmlGenerator extends CApplicationComponent {
+abstract class YmlGenerator extends CApplicationComponent {
     
     /**
      * Xml file encoding
@@ -234,42 +234,11 @@ class YmlGenerator extends CApplicationComponent {
     
     /* Methods that must be implemented in your custom derived class */     
     
-    protected function shopInfo() {
-        return array(
-            'name'=>'',
-            'company'=>'',
-            'url'=>'',
-            'platform'=>'',
-            'version'=>'',
-            'agency'=>'',
-            'email'=>''
-        );
-    }
+    abstract protected function shopInfo();
     
-    protected function currencies() {
-        /*
-         $currencies = ...;
-         foreach($currencies as $currecy) {
-            $this->addCurrency($id,$rate);
-         }
-        */
-    }
+    abstract protected function currencies();
     
-    protected function categories() {
-        /*
-         $categories = ...;
-         foreach($categories as $category) {
-            $this->addCategory($name,$id,$parentId);
-         }
-        */
-    }
+    abstract protected function categories();
     
-    protected function offers() {
-        /*
-         $offers = ...;
-         foreach($offers as $offer) {
-            $this->addOffer($id,$data, $params, $available, $type, $bid, $cbid);
-         }
-        */
-    }
+    abstract protected function offers();
 }
