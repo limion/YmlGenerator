@@ -29,7 +29,7 @@
  *      protected function categories() {...}
  *      protected function offers() {...}
  * }
- * How to implement these methods see descriptions below in this class
+ * How to implement these methods see the sample class MyYmlGenerator and definition of add* methods below
  */
 
 abstract class YmlGenerator extends CApplicationComponent {
@@ -74,17 +74,17 @@ abstract class YmlGenerator extends CApplicationComponent {
     protected $_engine;
     
     public function run() {
-        $this->beforeRun();
+        $this->beforeWrite();
         
         $this->writeShopInfo();
         $this->writeCurrencies();
         $this->writeCategories();
         $this->writeOffers();
         
-        $this->afterRun();
+        $this->afterWrite();
     }
     
-    protected function beforeRun() {
+    protected function beforeWrite() {
         if ($this->outputFile !== null) {
             $slashPos = strrpos($this->outputFile, DIRECTORY_SEPARATOR);
             if (false !== $slashPos) {
@@ -111,7 +111,7 @@ abstract class YmlGenerator extends CApplicationComponent {
         $engine->startElement('shop');
     }
     
-    protected function afterRun() {
+    protected function afterWrite() {
         $engine = $this->getEngine();
         $engine->fullEndElement();
         $engine->fullEndElement();
